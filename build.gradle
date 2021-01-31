@@ -18,6 +18,6 @@ tasks.withType(JavaCompile) {
 
 task google_tests (type: Test) {
     useJUnitPlatform {
-        includeTags 'google_tests'
+        includeTags 'demoqaTests'
     }
 }
