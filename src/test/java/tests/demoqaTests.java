@@ -36,7 +36,7 @@ static void setup(){
         $("#subjectsInput").val("Math").pressEnter();
         $("#subjectsInput").val("Arts").pressEnter();
         $(byText("Music")).click();
-        $("#uploadPicture").uploadFile(new File("src/test/java/tests/resources/1.txt"));
+        $("#uploadPicture").uploadFile(new File("src/test/resources/1.txt"));
         $("#currentAddress").val("elm st");
         $("#state").scrollTo();
         $("#state").click();
