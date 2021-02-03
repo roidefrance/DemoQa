@@ -1,4 +1,8 @@
+package tests;
+
+import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.commands.ScrollTo;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.exactText;
@@ -9,7 +13,10 @@ import static com.codeborne.selenide.Selenide.*;
 
 class demoqaTests {
 
-
+@BeforeAll
+static void setup(){
+    Configuration.startMaximized = true;
+}
     @Test
     void siteExists() {
 
@@ -18,7 +25,6 @@ class demoqaTests {
         $(byText("Forms")).scrollTo();
         $(byText("Forms")).click();
         $(byText("Practice Form")).click();
-        $(byText("Student Registration Form")).scrollTo();
         $("#firstName").setValue("Kirill");
         $("#lastName").setValue("Melnikov");
         $("#userEmail").setValue("xyz@aaa.net");
@@ -34,13 +40,13 @@ class demoqaTests {
         $(".subjects-auto-complete__menu-list").$(byText("Arts")).click();
         $(byText("Music")).click();
         $("#currentAddress").setValue("elm st");
+        $("#state").scrollTo();
         $("#state").click();
         $(byText("NCR")).click();
         $("#city").click();
         $(byText("Delhi")).click();
         $("#submit").click();
         $("html").shouldHave(text("Thanks for submitting the form"));
-
 
 
     }
