@@ -13,18 +13,19 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-class demoqaTests {
+class DemoQaTests {
 
-@BeforeAll
-static void setup(){
-    Configuration.startMaximized = true;
-    Configuration.timeout = 6000;
-}
+    @BeforeAll
+    static void setup(){
+        Configuration.startMaximized = true;
+        Configuration.timeout = 6000;
+    }
+    
     @Test
-    void siteExists() {
-
+    void formTest() {
         open("https://demoqa.com/automation-practice-form");
-        $("#firstName").val("Kirill").shouldBe(visible);
+        
+        $("#firstName").val("Kirill");
         $("#lastName").val("Melnikov");
         $("#userEmail").val("xyz@aaa.net");
         $(byText("Male")).click();
@@ -36,18 +37,15 @@ static void setup(){
         $("#subjectsInput").val("Math").pressEnter();
         $("#subjectsInput").val("Arts").pressEnter();
         $(byText("Music")).click();
-        $("#uploadPicture").uploadFile(new File("src/test/java/tests/resources/1.txt"));
+        $("#uploadPicture").uploadFile(new File("./src/test/java/tests/resources/1.txt"));
         $("#currentAddress").val("elm st");
-        $("#state").scrollTo();
-        $("#state").click();
+        $("#state").scrollTo().click();
         $(byText("NCR")).click();
         $("#city").click();
         $(byText("Delhi")).click();
         $("#submit").click();
+        
         $(".modal-body").shouldHave(text("Kirill"));
-        $("#closeLargeModal").scrollTo();
-        $("#closeLargeModal").click();
-
     }
 
 }
