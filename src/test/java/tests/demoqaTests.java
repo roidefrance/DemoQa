@@ -44,7 +44,7 @@ static void setup(){
         $("#city").click();
         $(byText("Delhi")).click();
         $("#submit").click();
-        $(".modal-body").shouldHave(text("Thanks for submitting the form"), text("Kirill"));
+        $(".modal-body").shouldHave(text("Kirill"));
         $("#closeLargeModal").scrollTo();
         $("#closeLargeModal").click();
 
