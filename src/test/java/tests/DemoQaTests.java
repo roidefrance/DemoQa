@@ -21,7 +21,7 @@ static void setup(){
     Configuration.timeout = 6000;
 }
     @Test
-    void siteExists() {
+    void UserFormTest() {
 
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").val("Kirill").shouldBe(visible);
