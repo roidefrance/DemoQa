@@ -44,7 +44,7 @@ static void setup(){
         $("#city").click();
         $(byText("Delhi")).click();
         $("#submit").click();
-        $(".modal-body").shouldHave(text("Kirill"));
+        $(".modal-body").shouldHave(text("Kirill"), text("Melnikov"), text("xyz@aaa.net"));
         $("#closeLargeModal").scrollTo();
         $("#closeLargeModal").click();
 
