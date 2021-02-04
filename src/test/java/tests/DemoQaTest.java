@@ -13,13 +13,12 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-class DemoQaTests {
-
-@BeforeAll
-static void setup(){
-    Configuration.startMaximized = true;
-    Configuration.timeout = 6000;
-}
+public class DemoQaTest {
+    @BeforeAll
+    static void setup(){
+        Configuration.startMaximized = true;
+        Configuration.timeout = 6000;
+    }
     @Test
     void UserFormTest() {
 
@@ -45,8 +44,6 @@ static void setup(){
         $(byText("Delhi")).click();
         $("#submit").click();
         $(".modal-body").shouldHave(text("Kirill"), text("Melnikov"), text("xyz@aaa.net"));
-        $("#closeLargeModal").scrollTo();
-        $("#closeLargeModal").click();
 
     }
 
