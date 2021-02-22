@@ -17,13 +17,13 @@ public class DemoQaTest {
     @BeforeAll
     static void setup(){
         Configuration.startMaximized = true;
-        Configuration.timeout = 6000;
+        Configuration.timeout = 3000;
     }
     @Test
     void UserFormTest() {
 
         open("https://demoqa.com/automation-practice-form");
-        $("#firstName").val("Kirill").shouldBe(visible);
+        $("#firstName").val("Kirill");
         $("#lastName").val("Melnikov");
         $("#userEmail").val("xyz@aaa.net");
         $(byText("Male")).click();
@@ -34,6 +34,7 @@ public class DemoQaTest {
         $(".react-datepicker__day--030").click();
         $("#subjectsInput").val("Math").pressEnter();
         $("#subjectsInput").val("Arts").pressEnter();
+        $(byText("Reading")).click();
         $(byText("Music")).click();
         $("#uploadPicture").uploadFile(new File("src/test/resources/1.txt"));
         $("#currentAddress").val("elm st");
