@@ -8,12 +8,8 @@ import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class DemoQaTest {
-    @BeforeAll
-    static void setup(){
-        Configuration.startMaximized = true;
-        Configuration.timeout = 3000;
-    }
+public class DemoQaTest extends TestBase {
+
     @Test
     void UserFormTest() {
         String firstName = "Paul",

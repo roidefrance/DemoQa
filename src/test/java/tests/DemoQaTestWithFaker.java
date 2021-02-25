@@ -10,12 +10,8 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class DemoQaTestWithFaker {
-    @BeforeAll
-    static void setup(){
-        Configuration.startMaximized = true;
-        Configuration.timeout = 3000;
-    }
+public class DemoQaTestWithFaker extends TestBase {
+
     @Test
     void UserFormTestWithFaker() {
         Faker faker = new Faker();
