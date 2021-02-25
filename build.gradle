@@ -1,5 +1,5 @@
 plugins {
-    id 'java-library'
+    id "java-library"
 }
 
 repositories {
@@ -7,17 +7,17 @@ repositories {
 }
 
 dependencies {
-    testImplementation 'com.codeborne:selenide:5.19.0'
+    testImplementation "com.codeborne:selenide:5.19.0"
     testImplementation "org.junit.jupiter:junit-jupiter-api:5.7.0"
+    testImplementation "org.slf4j:slf4j-simple:1.7.29"
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.7.0"
+    implementation "com.github.javafaker:javafaker:1.0.2"
 }
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
 
-task DemoQaTest (type: Test) {
-    useJUnitPlatform {
-
-    }
+test {
+    useJUnitPlatform ()
 }

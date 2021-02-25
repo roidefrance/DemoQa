@@ -1,30 +1,28 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.commands.ScrollTo;
+import com.github.javafaker.Faker;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
-import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byClassName;
+import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
-public class DemoQaTest {
+public class DemoQaTestWithFaker {
     @BeforeAll
     static void setup(){
         Configuration.startMaximized = true;
         Configuration.timeout = 3000;
     }
     @Test
-    void UserFormTest() {
-        String firstName = "Paul",
-        lastName = "White",
-        email = "p.white@mail.eu",
-        number = "4412345678",
+    void UserFormTestWithFaker() {
+        Faker faker = new Faker();
+        String firstName = faker.name().firstName(),
+        lastName = faker.name().lastName(),
+        email = faker.internet().emailAddress(),
+        number = faker.number().digits(10),
         birthMonth = "May",
         birthYear = "1980",
         birthDay = "15",
