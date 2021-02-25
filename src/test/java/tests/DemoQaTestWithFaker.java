@@ -31,10 +31,9 @@ public class DemoQaTestWithFaker {
         hobby1 = "Reading",
         hobby2 = "Music",
         file = "1.txt",
-        currentAddress = "elm st",
+        currentAddress = faker.address().fullAddress(),
         state = "NCR",
         city = "Delhi";
-
 
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").val(firstName);
@@ -54,7 +53,6 @@ public class DemoQaTestWithFaker {
         $("#hobbiesWrapper").$(byText(hobby2)).click();
         $("#uploadPicture").uploadFromClasspath(file);
         $("#currentAddress").val(currentAddress);
-        $("#state").scrollTo();
         $("#state").click();
         $("#state").$(byText(state)).click();
         $("#city").click();

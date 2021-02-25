@@ -1,15 +1,10 @@
 package tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selectors;
-import com.codeborne.selenide.commands.ScrollTo;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.*;
-import static com.codeborne.selenide.Selectors.byClassName;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
@@ -37,7 +32,6 @@ public class DemoQaTest {
         state = "NCR",
         city = "Delhi";
 
-
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").val(firstName);
         $("#lastName").val(lastName);
@@ -56,7 +50,6 @@ public class DemoQaTest {
         $("#hobbiesWrapper").$(byText(hobby2)).click();
         $("#uploadPicture").uploadFromClasspath(file);
         $("#currentAddress").val(currentAddress);
-        $("#state").scrollTo();
         $("#state").click();
         $("#state").$(byText(state)).click();
         $("#city").click();
